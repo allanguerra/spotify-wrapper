@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "mocha": true
     },
     "extends": [
         "airbnb-base"
@@ -15,5 +16,8 @@
         "sourceType": "module"
     },
     "rules": {
+      "object-curly-newline": "off",
+      "no-unused-expressions": "off",
+      "implicit-arrow-linebreak": "off"
     }
 }
