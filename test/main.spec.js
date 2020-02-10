@@ -1,8 +1,8 @@
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-
 import chai, { expect } from 'chai';
-import { search, searchArtists, searchAlbuns, searchTracks, searchPlaylists } from '../src/main';
+
+import { search, searchArtists, searchAlbums, searchTracks, searchPlaylists } from '../src/main';
 
 chai.use(sinonChai);
 
@@ -29,8 +29,8 @@ describe('Spotify Wrapper', () => {
       expect(searchArtists).to.exist;
     });
 
-    it('should exist the searchAlbuns method', () => {
-      expect(searchAlbuns).to.exist;
+    it('should exist the searchAlbums method', () => {
+      expect(searchAlbums).to.exist;
     });
 
     it('should exist the searchTracks method', () => {
@@ -84,14 +84,14 @@ describe('Spotify Wrapper', () => {
     });
   });
 
-  describe('search albuns', () => {
+  describe('search albums', () => {
     it('should call fetch function', () => {
-      searchAlbuns('incubus');
+      searchAlbums('incubus');
       expect(fetchedStub).to.have.been.calledOnce;
     });
 
     it('should be called with the correct URL', () => {
-      searchAlbuns('incubus');
+      searchAlbums('incubus');
       expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=incubus&type=album');
     });
   });
