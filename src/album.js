@@ -1,5 +1,11 @@
-export const getAlbum = (idAlbum) =>
-  fetch(`https://api.spotify.com/v1/albums/${idAlbum}`)
-    .then((data) => data.json());
+import API_URL from './infra/environment';
+import toJSON from './infra/utils';
 
-export const getAlbumTracks = () => {};
+export const getAlbum = (idAlbum) =>
+  fetch(`${API_URL}/albums/${idAlbum}`).then(toJSON);
+
+export const getAlbums = (idAlbums) =>
+  fetch(`${API_URL}/albums?ids=${idAlbums}`).then(toJSON);
+
+export const getAlbumTracks = (idAlbum) =>
+  fetch(`${API_URL}/albums/${idAlbum}/tracks`).then(toJSON);
