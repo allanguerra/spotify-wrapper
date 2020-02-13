@@ -1,8 +1,8 @@
-import API_URL from './infra/environment';
+import { API_URL, HEADERS } from './infra/environment';
 import toJSON from './infra/utils';
 
 export const search = (query, type) =>
-  fetch(`${API_URL}/search?q=${query}&type=${type}`).then(toJSON);
+  fetch(`${API_URL}/search?q=${query}&type=${type}`, HEADERS).then(toJSON);
 
 export const searchArtists = (query) =>
   search(query, 'artist');
