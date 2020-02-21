@@ -25,7 +25,6 @@ describe('Search', () => {
   });
 
   describe('smoke tests', () => {
-
     it('should exist the search.artists method', () => {
       expect(spotify.search.artists).to.exist;
     });

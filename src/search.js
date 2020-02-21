@@ -1,4 +1,4 @@
-function searcher(query, type) {
+function searcher(type, query) {
   return this.request(`${this.apiURL}/search?q=${query}&type=${type}`);
 }
 
